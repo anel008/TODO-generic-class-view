@@ -3,13 +3,17 @@
 {%block content%}
 
 <h1> Your notes </h1>
-
 {% for note in note%}
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+      <a href="{%url 'viewnote' note.id%}"class="list-group-item">{{note.title}} </a>
+    </ul>
+  </div>
 
-<a href="{%url 'viewnote' note.id%}">{{note.title}}</a><br><br>
 
 
 {%endfor%}
-<button onclick="location.href='{% url 'add' %}'">add notes</button>
+<br>
+<button class="btn btn-success"Success onclick="location.href='{% url 'add' %}'">add notes</button>
 
 {%endblock content%}

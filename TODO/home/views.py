@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import CreateView,UpdateView,DeleteView,DetailView,ListView,View
 from .models import Todo
 from .form import NoteForm
+from django.urls import reverse_lazy
 # Create your views here.
 
 class CreateNote(CreateView):
@@ -23,10 +24,10 @@ class ViewNote(DetailView):
 class DeleteNote(DeleteView):
     model = Todo
     template_name ='delete.html'
-    success_url = '/'
+    success_url = reverse_lazy('/')
 
 class UpdateNote(UpdateView):
     model = Todo
     template_name = 'update.html'
     fields = ('title','body')
-    success_url='/'
+    success_url=reverse_lazy('/')

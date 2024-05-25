@@ -1,13 +1,21 @@
 {%extends 'base.html'%}
 
 {%block content%}
-
-<p>
-{{note.title}}<br>
-{{note.body}}<br>
-<button onclick="location.href='{% url 'update' note.id %}'">update</button>
-<button onclick="location.href='{% url 'delete' note.id %}'">Delete</button>
-
-</p>
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            {{note.title}}
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>{{note.body}}</strong><br>
+          <button class="btn btn-outline-primary" onclick="location.href='{% url 'update' note.id %}'">update</button>
+          <button class="btn btn-outline-danger" onclick="location.href='{% url 'delete' note.id %}'">Delete</button>
+        </div>
+      </div>
+    </div>
+</div>
 
 {% endblock content %}
