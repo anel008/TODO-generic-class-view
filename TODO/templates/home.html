@@ -6,8 +6,10 @@
 
 {% for note in note%}
 
-<a href="{%url 'viewnote' note.id%}">{{note.title}}</a><br>
+<a href="{%url 'viewnote' note.id%}">{{note.title}}</a><br><br>
+
 
 {%endfor%}
+<button onclick="location.href='{% url 'add' %}'">add notes</button>
 
 {%endblock content%}

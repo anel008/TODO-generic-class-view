@@ -2,7 +2,7 @@
 
 {%block content%}
 
-<form method='POST'action='{% url 'delete' note.id %}'>
+<form method='POST'>
     {% csrf_token %}
     do you want to delete<br>
     <input type='submit' value='delete'>
