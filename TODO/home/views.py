@@ -3,18 +3,26 @@ from django.views.generic import CreateView,UpdateView,DeleteView,DetailView,Lis
 from .models import Todo
 # Create your views here.
 
-class create_note(CreateView):
+class CreateNote(CreateView):
     model = Todo
     template_name = 'add.html'
     fields = ('title','body')
     success_url = '/home'
 
-class list_note(ListView):
+class ListNote(ListView):
     model = Todo
     template_name = 'home.html'
     context_object_name = 'note'
 
-class view_note(DetailView):
+class ViewNote(DetailView):
     model = Todo
     template_name = 'notes.html'
     context_object_name = 'note'
+
+class DeleteNote(DeleteView):
+    model = Todo
+    template_name ='delete.html'
+    success_url = 'home.html'
+
+class UpdateNote(UpdateView):
+    pass

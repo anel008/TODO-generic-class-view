@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<form method='POST'action='{% url 'delete' note.id %}'>
+    {% csrf_token %}
+    do you want to delete<br>
+    <input type='submit' value='delete'>
+</form>
+{% endblock content %}

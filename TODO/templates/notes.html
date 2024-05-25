@@ -3,8 +3,10 @@
 {%block content%}
 
 <p>
-{{note.title}}
-{{note.body}}
+{{note.title}}<br>
+{{note.body}}<br>
+<button>update</button>
+<button onclick="location.href='{% url 'delete' note.id%}'"> Delete </button>
 </p>
 
 {% endblock content %}
