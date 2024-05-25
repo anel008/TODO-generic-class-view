@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+
+ <h1> Create your Note </h1>
+<form method='POST' action="{%url 'add'%}">
+{% csrf_token %}
+title <input type='text' name='title'><br>
+body <input type='text' name='body'><br>
+<input type='submit' value='add'>
+
+</form> 
+
+
+{% comment %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Note</title>
+</head>
+<body>
+    <h1>Create a new note</h1>
+    <form method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title"><br>
+        <label for="body">Body:</label>
+        <input type="text" name="body" id="body"><br>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html> {% endcomment %}
+
+
+{%endblock content%}
